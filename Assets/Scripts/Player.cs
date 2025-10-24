@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private const int MAX_BOOM = 3;
+    private const int MAX_POWER = 3;
+
+    public GameObject boomPrefab;
     public GameObject playerBulletPrefab;
     public Transform firePoint;
+
     private Animator anim;
     public float speed = 1f;
     public int life = 3;
+    private int boom;
+    private int power;
     private float delta = 0;
     private float span = 0.1f;
     private bool isInvincibility = false;
+    bool isBoomTime = false;
+    Coroutine boomCoroutine;
     
     public Action onResetPosition;
     public Action onGameOver;
-    
+    public Action onBoom;
+    public bool isBoom = false;
 
     private void Start()
     {
@@ -27,6 +37,17 @@ public class Player : MonoBehaviour
         Move();
         Fire();
         Reload();
+    }
+
+    void Boom()
+    {
+        if (!Input.GetButton("Fire2"))
+            return;
+        
+        if (isBoom)
+            return;
+        isBoom = true;
+        onBoom();
     }
 
     private void Reload()
@@ -91,11 +112,40 @@ public class Player : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
-            
-            
+        }
+        
+        else if (other.gameObject.CompareTag("Item"))
+        {
+            Item item = other.gameObject.GetComponent<Item>();
+            switch (item.itemType)
+            {
+                case Item.ItemType.Boom:
+                    Debug.Log("Boom");
+                    boom++;
+                    if (boom >= MAX_BOOM)
+                    {
+                        //GameManager.Instance.score += 500;
+                    }
+                    break;
+                
+                case Item.ItemType.Coin:
+                    Debug.Log("Coin");
+                    //GameManager.Instance.score += 100;
+                    break;
+                
+                case Item.ItemType.Power:
+                    Debug.Log("Power");
+                    power++;
+                    if (power >= MAX_POWER)
+                    {
+                        //GameManager.Instance.score += 500;
+                    }
+                    break;;
+            }
+            Destroy(other.gameObject);
         }
     }
-
+    
     private void ResetPosition()
     {
         this.transform.position = new Vector3(0, -3.78f, 0);
