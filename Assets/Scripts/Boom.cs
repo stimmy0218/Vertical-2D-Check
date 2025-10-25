@@ -14,14 +14,17 @@ public class Boom : MonoBehaviour
             Enemy enemy = enemies[i];
             enemy.TakeDamage(1000);
         }
+
         EnemyBullet[] enemyBullets = GameObject.FindObjectsByType<EnemyBullet>(FindObjectsSortMode.None);
-        for (int i = 0; i < enemyBullets.Length; i++)
+        for (int i = 0; enemyBullets.Length > i; i++)
         {
             EnemyBullet enemyBullet = enemyBullets[i];
             Destroy(enemyBullet.gameObject);
         }
+        
+        
         yield return new WaitForSeconds(0.25f);
-
+        
         // if (onFinishBoom != null)
         // {
         //     onFinishBoom();

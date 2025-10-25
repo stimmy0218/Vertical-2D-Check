@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2874061696248165256
+--- !u!1 &8501451524271069030
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3741403521088841847}
-  - component: {fileID: 5299203277831116292}
-  - component: {fileID: 5174853576973261742}
-  - component: {fileID: 3670534504296634429}
+  - component: {fileID: 3183260532249045299}
+  - component: {fileID: 623264090593557366}
+  - component: {fileID: 6556605048738604309}
+  - component: {fileID: 8893494860416981494}
   m_Layer: 0
-  m_Name: EnemyCPrefab
-  m_TagString: Enemy
+  m_Name: EnemyBullet1Prefab
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3741403521088841847
+--- !u!4 &3183260532249045299
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2874061696248165256}
+  m_GameObject: {fileID: 8501451524271069030}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.64, y: 0, z: 0}
+  m_LocalPosition: {x: -0.553, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5299203277831116292
+--- !u!212 &623264090593557366
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2874061696248165256}
+  m_GameObject: {fileID: 8501451524271069030}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,44 +78,37 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8421458170528590454, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
+  m_Sprite: {fileID: -7779215486825634471, guid: 5547e92425a5b584ba72bba3566474f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.3333334, y: 1.125}
+  m_Size: {x: 0.25, y: 0.33333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5174853576973261742
+--- !u!114 &6556605048738604309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2874061696248165256}
+  m_GameObject: {fileID: 8501451524271069030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7848336bb8f0c144a7dddba564c593e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e83482439f5ff94ca480072286085d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 2
-  enemyBulletPrefab: {fileID: 6707343316293539645, guid: c20a3ccc23ca12c469b1b77b3e2160ce, type: 3}
-  speed: 1
-  health: 8
-  sprites:
-  - {fileID: -8421458170528590454, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
-  - {fileID: 3714015224569861163, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
-  spriteRenderer: {fileID: 5299203277831116292}
---- !u!61 &3670534504296634429
-BoxCollider2D:
+  speed: 3
+--- !u!70 &8893494860416981494
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2874061696248165256}
+  m_GameObject: {fileID: 8501451524271069030}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -144,14 +137,5 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3333334, y: 1.125}
-    newSize: {x: 1.3333334, y: 1.125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.3333334, y: 1.125}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.25, y: 0.33333334}
+  m_Direction: 0

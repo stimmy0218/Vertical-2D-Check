@@ -1,0 +1,100 @@
+{
+  "events": [
+    {
+      "time": 0.0,
+      "prefab": {
+        "guid": "835704a4f77ba404191d3479e92660db",
+        "path": "Assets/Resources/Enemies/EnemyAPrefab.prefab",
+        "name": "EnemyAPrefab",
+        "resourcePath": "Enemies/EnemyAPrefab"
+      },
+      "vp": [
+        0.07557714,
+        1.05364311
+      ],
+      "count": 1,
+      "interval": 0.0,
+      "rotationDeg": 0.0
+    },
+    {
+      "time": 0.0,
+      "prefab": {
+        "guid": "ab07f3a82696f9d41acfa8a4983b41c7",
+        "path": "Assets/Resources/Enemies/EnemyBPrefab.prefab",
+        "name": "EnemyBPrefab",
+        "resourcePath": "Enemies/EnemyBPrefab"
+      },
+      "vp": [
+        0.5,
+        1.1
+      ],
+      "count": 1,
+      "interval": 0.0,
+      "rotationDeg": 0.0
+    },
+    {
+      "time": 0.0,
+      "prefab": {
+        "guid": "835704a4f77ba404191d3479e92660db",
+        "path": "Assets/Resources/Enemies/EnemyAPrefab.prefab",
+        "name": "EnemyAPrefab",
+        "resourcePath": "Enemies/EnemyAPrefab"
+      },
+      "vp": [
+        1.45186114,
+        0.995697141
+      ],
+      "count": 1,
+      "interval": 0.0,
+      "rotationDeg": 314.185181
+    },
+    {
+      "time": 1.0,
+      "prefab": {
+        "guid": "ab07f3a82696f9d41acfa8a4983b41c7",
+        "path": "Assets/Resources/Enemies/EnemyBPrefab.prefab",
+        "name": "EnemyBPrefab",
+        "resourcePath": "Enemies/EnemyBPrefab"
+      },
+      "vp": [
+        0.795879364,
+        1.09072876
+      ],
+      "count": 1,
+      "interval": 0.0,
+      "rotationDeg": 0.0
+    },
+    {
+      "time": 1.0,
+      "prefab": {
+        "guid": "ab07f3a82696f9d41acfa8a4983b41c7",
+        "path": "Assets/Resources/Enemies/EnemyBPrefab.prefab",
+        "name": "EnemyBPrefab",
+        "resourcePath": "Enemies/EnemyBPrefab"
+      },
+      "vp": [
+        -0.208744824,
+        0.817223132
+      ],
+      "count": 1,
+      "interval": 0.0,
+      "rotationDeg": 39.9373
+    },
+    {
+      "time": 2.0,
+      "prefab": {
+        "guid": "a10b4da41c928824d861574a2fc1e22c",
+        "path": "Assets/Resources/Enemies/EnemyCPrefab.prefab",
+        "name": "EnemyCPrefab",
+        "resourcePath": "Enemies/EnemyCPrefab"
+      },
+      "vp": [
+        1.11397111,
+        0.8334482
+      ],
+      "count": 1,
+      "interval": 0.0,
+      "rotationDeg": 316.7624
+    }
+  ]
+}

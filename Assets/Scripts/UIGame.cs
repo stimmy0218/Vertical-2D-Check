@@ -13,6 +13,7 @@ public class UIGame : MonoBehaviour
 
     public void UpdateLivesGo(int lives)
     {
+        
         //모두 안보여준다 
         foreach(GameObject livesGo in livesGo)
             livesGo.SetActive(false);
@@ -47,7 +48,7 @@ public class UIGame : MonoBehaviour
 
     public void UpdateScoreText()
     {
-        
+        this.scoreText.text = GameManager.Instance.score.ToString();
     }
 
 
