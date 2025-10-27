@@ -10,7 +10,8 @@ public class PlayerBullet : MonoBehaviour
 
         if (transform.position.y > 5.4f)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            ObjectPoolManager.Instance.ReleasePlayerBullet0Go(this.gameObject);
         }
     }
 
@@ -21,7 +22,7 @@ public class PlayerBullet : MonoBehaviour
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
             enemy.TakeDamage(1);
             
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

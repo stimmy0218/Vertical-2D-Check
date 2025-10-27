@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Player : MonoBehaviour
 {
@@ -75,9 +76,12 @@ public class Player : MonoBehaviour
             return;
         
         Debug.Log("총알 발사!");
-        GameObject bulletPrefab = GetPlayerBulletPrefab();
-        GameObject go = Instantiate(bulletPrefab, firePoint.position, transform.rotation);
-
+        // GameObject bulletPrefab = GetPlayerBulletPrefab();
+        // GameObject go = Instantiate(bulletPrefab, firePoint.position, transform.rotation);
+        GameObject go = ObjectPoolManager.Instance.GetPlayerBullet0();
+        go.transform.position = firePoint.position;
+        go.transform.rotation = firePoint.rotation;
+        
         delta = 0;
     }
 
