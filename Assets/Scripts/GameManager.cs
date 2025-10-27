@@ -57,4 +57,11 @@ public class GameManager : MonoBehaviour
             delta = 0;  //대무통을 비운다 
         }
     }
+
+    public void AddScore(int value)
+    {
+        score += value;
+        onUpdateScore();
+    }
+    
 }

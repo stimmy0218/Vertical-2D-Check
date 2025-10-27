@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject playerBulletPrefab;
+    public GameObject[] playerBulletPrefabs;
     public Transform firePoint;
     
     private const int MAX_BOOM = 3;
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public float speed = 1f;
     public int life = 3;
     public int boom;
-    private int power;
+    public int power = 1;
     private float delta = 0;
     private float span = 0.1f;
     private bool isInvincibility = false;
@@ -75,11 +75,18 @@ public class Player : MonoBehaviour
             return;
         
         Debug.Log("총알 발사!");
-        GameObject go = Instantiate(playerBulletPrefab, firePoint.position, transform.rotation);
+        GameObject bulletPrefab = GetPlayerBulletPrefab();
+        GameObject go = Instantiate(bulletPrefab, firePoint.position, transform.rotation);
 
         delta = 0;
     }
 
+    public GameObject GetPlayerBulletPrefab()
+    {
+         int index = power - 1;
+         return playerBulletPrefabs[index];   
+    }
+    
     private void Move()
     {
         float h = Input.GetAxisRaw("Horizontal");   //-1, 0, 1
@@ -137,7 +144,7 @@ public class Player : MonoBehaviour
                     if (boom >= MAX_BOOM)
                     {
                         boom = MAX_BOOM;
-                        GameManager.Instance.score += 500;
+                        GameManager.Instance.AddScore(500);
                     }
                     
                     onGetBoomItem();
@@ -146,7 +153,7 @@ public class Player : MonoBehaviour
                 
                 case Item.ItemType.Coin:
                     Debug.Log("동전을 획득했다!");
-                    GameManager.Instance.score += 1000;
+                    GameManager.Instance.AddScore(1000);
                     break;
                 
                 case Item.ItemType.Power:
@@ -155,7 +162,7 @@ public class Player : MonoBehaviour
                     if (power >= MAX_POWER)
                     {
                         power = MAX_POWER;
-                        GameManager.Instance.score += 500;
+                        GameManager.Instance.AddScore(500);
                     }
 
                     break;
